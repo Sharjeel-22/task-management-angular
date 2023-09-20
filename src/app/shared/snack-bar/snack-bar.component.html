@@ -1,0 +1,6 @@
+<div class="snackbar-container">
+  <mat-icon>{{ data?.icon }}</mat-icon>
+  <span>&nbsp;</span>
+  <span>{{ data?.message || "Please try again" }}</span>
+  <button mat-button (click)="closeSnackBar()">{{ data?.action }}</button>
+</div>

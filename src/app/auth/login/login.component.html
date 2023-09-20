@@ -1,0 +1,23 @@
+<app-two-side>
+  <div class="login-form">
+    <form [formGroup]="loginProfile" (ngSubmit)="login()">
+      <h2>Sign in</h2>
+      <app-input
+        name="Email"
+        inputType="email"
+        [control]="this.getFormControl('email')"
+        placeHolder="email@gmail.com"
+      ></app-input>
+      <app-input
+        name="Password"
+        inputType="password"
+        [control]="this.getFormControl('password')"
+        placeHolder="Password"
+      ></app-input>
+      <button [disabled]="loginProfile.invalid" class="btn" type="submit">
+        Sign In
+      </button>
+      <p>Don't have an account? <span routerLink="sign-up">Sign up</span></p>
+    </form>
+  </div>
+</app-two-side>

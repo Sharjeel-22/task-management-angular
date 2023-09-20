@@ -1,0 +1,28 @@
+<div class="task-container">
+  <div class="form-side">
+    <div class="form">
+      <form [formGroup]="taskProfile" (ngSubmit)="createTask()">
+        <h2>Create a Task</h2>
+        <app-input
+          name="Title"
+          inputType="text"
+          [control]="this.getFormControl('title')"
+          placeHolder="Title"
+        ></app-input>
+        <app-input
+          name="Description"
+          inputType="text"
+          [control]="this.getFormControl('description')"
+          placeHolder="Description"
+        ></app-input>
+        <app-input
+          name="Due Date"
+          inputType="date"
+          [control]="this.getFormControl('dueDate')"
+          placeHolder="Due Date"
+        ></app-input>
+        <button class="btn" type="submit">Create Task</button>
+      </form>
+    </div>
+  </div>
+</div>

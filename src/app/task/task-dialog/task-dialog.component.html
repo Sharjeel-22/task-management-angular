@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form
+    [formGroup]="taskProfile"
+    (ngSubmit)="taskMethod == 'createTask' ? createTask() : updateTask()"
+  >
+    <span>
+      <app-input
+        name="Title"
+        inputType="text"
+        [control]="this.getFormControl('title')"
+        [value]="formData?.title ?? ''"
+        placeHolder="Title"
+      ></app-input>
+    </span>
+    <app-input
+      name="Description"
+      inputType="text"
+      [control]="this.getFormControl('description')"
+      [value]="formData?.description ?? ''"
+      placeHolder="Description"
+    ></app-input>
+    <app-input
+      name="Due Date"
+      inputType="date"
+      [control]="this.getFormControl('dueDate')"
+      [value]="formData?.dueDate ?? ''"
+      placeHolder="Due Date"
+    ></app-input>
+    <div mat-dialog-actions align="end">
+      <button mat-dialog-close class="btn" type="submit">Close</button>
+      <button type="submit" class="btn" [disabled]="taskProfile.invalid">
+        {{ taskMethod == "createTask" ? "Create Task" : "Update Task" }}
+      </button>
+    </div>
+  </form>
+</div>

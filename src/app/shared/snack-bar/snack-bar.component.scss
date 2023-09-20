@@ -1,0 +1,13 @@
+.snackbar-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+
+  & > :first-child {
+    margin-right: 10px;
+  }
+
+  button {
+    color: white !important;
+  }
+}

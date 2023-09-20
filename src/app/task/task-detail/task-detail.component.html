@@ -1,0 +1,32 @@
+<div class="task-container">
+  <mat-divider></mat-divider>
+  <div class="content">
+    <div class="add-task" (click)="openCreateDialog()">Add New Task</div>
+    <div class="task" *ngFor="let task of taskList">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            >{{ task.title
+            }}<mat-card-subtitle>{{
+              task.dueDate | date
+            }}</mat-card-subtitle></mat-card-title
+          >
+        </mat-card-header>
+        <mat-divider></mat-divider>
+
+        <mat-card-content>
+          <p>{{ task.description }}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+          <button class="btn" (click)="openUpdateDialog(task)">
+            Edit Task
+          </button>
+          <button class="btn del" (click)="deleteTask(task._id)">
+            Delete Task
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
